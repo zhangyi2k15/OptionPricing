@@ -71,9 +71,9 @@ if __name__ == '__main__':
               "sigma": 0.3,  # volatility
               "q": 0,
               "eta": 0.15,
-              "alpha": 1.5,
-              "N": np.power(2, 10)}
-    eurofft = EuroOption(**params)
+              "alpha": 1,
+              "N": np.power(2, 12)}
+    eurofft = EuroOptionFFT(**params)
 
     km, p_fft = eurofft.fft_main()
     print(np.interp(90, km, p_fft))
